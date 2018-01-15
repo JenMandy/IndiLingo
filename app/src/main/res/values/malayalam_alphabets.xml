@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="malayalam_vowels">
+        <item>അ</item>
+        <item>ആ</item>
+        <item>ഇ</item>
+        <item>ഈ</item>
+        <item>ഉ</item>
+        <item>ഊ</item>
+        <item>ഋ</item>
+        <item>ൠ</item>
+        <item>എ</item>
+        <item>ഏ</item>
+        <item>ഐ</item>
+        <item>ഒ</item>
+        <item>ഓ</item>
+        <item>ഔ</item>
+        <item>അം</item>
+        <item>അഃ</item>
+    </string-array>
+
+
+    <string-array name="malayalam_consonants">
+        <item>ക</item>
+        <item>ഖ</item>
+        <item>ഗ</item>
+        <item>ഘ</item>
+        <item>ങ</item>
+        <item>ച</item>
+        <item>ഛ</item>
+        <item>ജ</item>
+        <item>ഝ</item>
+        <item>ഞ</item>
+        <item>ട</item>
+        <item>ഠ</item>
+        <item>ഡ</item>
+        <item>ഢ</item>
+        <item>ണ</item>
+        <item>ത</item>
+        <item>ഥ</item>
+        <item>ദ</item>
+        <item>ധ</item>
+        <item>ന</item>
+        <item>പ</item>
+        <item>ഫ</item>
+        <item>ബ</item>
+        <item>ഭ</item>
+        <item>മ</item>
+        <item>യ</item>
+        <item>ര</item>
+        <item>ല</item>
+        <item>വ</item>
+        <item>ശ</item>
+        <item>ഷ</item>
+        <item>സ</item>
+        <item>ഹ</item>
+        <item>ള</item>
+        <item>ഴ</item>
+        <item>റ</item>
+    </string-array>
+
+    <string-array name="malayalam_vowels_symbols">
+        <item></item>
+        <item>ാ</item>
+        <item>ി</item>
+        <item>ീ</item>
+        <item>ു</item>
+        <item>ൂ</item>
+        <item>ൃ</item>
+        <item>ൄ</item>
+        <item>െ</item>
+        <item>േ</item>
+        <item>ൈ</item>
+        <item>ൊ</item>
+        <item>ോ</item>
+        <item>ൌ</item>
+        <item>ം</item>
+        <item>ഃ</item>
+    </string-array>
+
+    <string-array name="malayalam_conjoined_alphabets">
+        <item>ക്ഷ</item>
+        <item>ത്യ</item>
+        <item>ജ്ഞ</item>
+        <item>ൻ</item>
+        <item>ൺ</item>
+        <item>ണ്ട</item>
+        <item>ഞ്ഞ</item>
+        <item>ഞ്ച</item>
+        <item>ർ</item>
+        <item>ൽ</item>
+        <item>ൾ</item>
+        <item>ക്ക</item>
+        <item>കൃ</item>
+        <item>ബ്ര</item>
+        <item>കര</item>
+        <item>ക്ല</item>
+        <item>ഥ്വ</item>
+    </string-array>
+
+    <string-array name="to_malayalam_colours">
+        <item>വേലുപ്പ്</item>
+        <item>കറുപ്പ്</item>
+        <item>മഞ്ഞ</item>
+        <item>നീല</item>
+        <item>പച്ച</item>
+        <item>ചുവപ്പ്</item>
+        <item>വെള്ളി</item>
+    </string-array>
+</resources>

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <variable
+            name="selectTopicViewModel"
+            type="com.jenny.indilingo.viewmodel.SelectTopicViewModel" />
+    </data>
+
+    <LinearLayout
+        android:id="@+id/display_alphabet_relative_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:paddingBottom="@dimen/activity_vertical_margin"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:paddingTop="@dimen/activity_vertical_margin"
+        android:weightSum="3">
+
+        <LinearLayout
+            android:layout_height="@dimen/zero_dp"
+            android:layout_width="match_parent"
+            android:layout_weight="1"
+            android:weightSum="2"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="@dimen/zero_dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:onClick="@{selectTopicViewModel.goToDisplayVowelsActivity}"
+                android:text="@string/vowels"
+                android:textSize="@dimen/secondary_language_text" />
+
+            <TextView
+                android:layout_width="@dimen/zero_dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:onClick="@{selectTopicViewModel.goToDisplayConsonantsActivity}"
+                android:text="@string/consonants"
+                android:textSize="@dimen/secondary_language_text" />
+        </LinearLayout>
+
+        <TextView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/zero_dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:onClick="@{selectTopicViewModel.goToTestAlphabetsActivity}"
+                android:text="@string/test_alphabets"
+                android:textSize="@dimen/secondary_language_text" />
+        <TextView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/zero_dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:onClick="@{selectTopicViewModel.goToLearnWordsActivity}"
+                android:text="@string/words"
+                android:textSize="@dimen/secondary_language_text" />
+    </LinearLayout>
+</layout>

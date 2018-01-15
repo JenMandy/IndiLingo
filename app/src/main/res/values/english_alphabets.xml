@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="english_vowels">
+        <!--Vowels-->
+        <item>a</item>
+        <item>ā</item>
+        <item>i</item>
+        <item>ī</item>
+        <item>u</item>
+        <item>ū</item>
+        <item>r</item>
+        <item>r̥̄</item>
+        <item>e</item>
+        <item>ē</item>
+        <item>ai</item>
+        <item>o</item>
+        <item>ō</item>
+        <item>au</item>
+        <item>aṁ</item>
+        <item>aḥ</item>
+    </string-array>
+
+    <string-array name="english_consonants">
+        <item>ka</item>
+        <item>kha</item>
+        <item>ga</item>
+        <item>gha</item>
+        <item>ṅa</item>
+        <item>ca</item>
+        <item>cha</item>
+        <item>ja</item>
+        <item>jha</item>
+        <item>ña</item>
+        <item>ta</item>
+        <item>tha</item>
+        <item>ḍa</item>
+        <item>ḍha</item>
+        <item>ṇa</item>
+        <item>ta</item>
+        <item>tha</item>
+        <item>da</item>
+        <item>dha</item>
+        <item>na</item>
+        <item>pa</item>
+        <item>pha</item>
+        <item>ba</item>
+        <item>bha</item>
+        <item>ma</item>
+        <item>ya</item>
+        <item>ra</item>
+        <item>la</item>
+        <item>va</item>
+        <item>śa</item>
+        <item>ṣa</item>
+        <item>sa</item>
+        <item>ha</item>
+        <item>ḷa</item>
+        <item>ḻa</item>
+        <item>ṟa</item>
+    </string-array>
+
+    <string-array name="english_conjoined_alphabets">
+        <item>ksha</item>
+        <item>tra</item>
+        <item>nja</item>
+        <item>eil</item>
+        <item>inn</item>
+        <item>nta</item>
+        <item>ccha</item>
+        <item>ncha</item>
+        <item>ir</item>
+        <item>in</item>
+        <item>ൾ</item>
+        <item>kka</item>
+        <item>kra</item>
+        <item>bra</item>
+        <item>കര</item>
+        <item>kla</item>
+        <item>thra</item>
+    </string-array>
+
+    <string-array name="to_english_colours">
+        <item>White</item>
+        <item>Black</item>
+        <item>Yellow</item>
+        <item>Blue</item>
+        <item>Green</item>
+        <item>Red</item>
+        <item>Silver</item>
+    </string-array>
+
+</resources>
