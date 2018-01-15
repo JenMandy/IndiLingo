@@ -1,0 +1,29 @@
+<resources>
+    <!--Activity Titles-->
+    <string name="app_name">IndiLingo</string>
+    <string name="title_activity_select_topic">Select A Topic</string>
+    <string name="display_alphabets">Display Alphabets</string>
+    <string name="display_barakadi">Barakhadi</string>
+    <string name="test_alphabets">Test Alphabets</string>
+    <string name="words">Words</string>
+
+    <!--Select Topic Strings-->
+    <string name="vowels">Vowels</string>
+    <string name="consonants">Consonants</string>
+    <string name="alphabet_type">alphabetType</string>
+    <string name="alphabet_no">alphabetNo</string>
+    <!--Display Alphabets strings-->
+    <string name="view_barakhadi">View it\'s barakhadi</string>
+    <string name="alphabet">alphabet</string>
+    <!--Display Barakadi strings-->
+    <string name="barakadi_breakup">%1$s + %2$s = %3$s</string>
+    <!--Test List strings-->
+    <string name="test_no">testNo</string>
+    <string name="level_one">Level 1</string>
+    <string name="level_two">Level 2</string>
+    <string name="level_three">Level 3</string>
+    <string name="level_four">Level 4</string>
+    <!--Words strings-->
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+</resources>

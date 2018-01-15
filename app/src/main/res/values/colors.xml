@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="red_FF0000">#FF0000</color>
+    <color name="green_00FF00">#00FF00</color>
+    <color name="black_000000">#000000</color>
+    <color name="white_FFFFFF">#FFFFFF</color>
+    <color name="transparent_black_99">#99000000</color>
+    <color name="light_blue_d0d5f4">#d0d5f4</color>
+    <color name="disable_grey">#55999999</color>
+
+    <!--Malayalam Colors-->
+    <color name="Veluppu">@color/white_FFFFFF</color>
+    <color name="Karuppu">@color/black_000000</color>
+    <color name="Manja">#FFFF00</color>
+    <color name="Neela">#0000FF</color>
+    <color name="Pachcha">@color/green_00FF00</color>
+    <color name="Chuvappu">@color/red_FF0000</color>
+    <color name="Velli">#EEEEEE</color>
+</resources>

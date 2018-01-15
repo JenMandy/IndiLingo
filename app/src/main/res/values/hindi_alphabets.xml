@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="hindi_vowels">
+        <item>अ</item>
+        <item>आ</item>
+        <item>इ</item>
+        <item>ई</item>
+        <item>उ</item>
+        <item>ऊ</item>
+        <item>ऋ</item>
+        <item>ॠ</item>
+        <item>ए</item>
+        <item>ഏ</item>
+        <item>ऐ</item>
+        <item>ओ</item>
+        <item>ഓ</item>
+        <item>औ</item>
+        <item>अं</item>
+        <item>अः</item>
+    </string-array>
+
+    <string-array name="hindi_consonants">
+        <item>क</item>
+        <item>ख</item>
+        <item>ग</item>
+        <item>घ</item>
+        <item>ङ</item>
+        <item>च</item>
+        <item>छ</item>
+        <item>ज</item>
+        <item>झ</item>
+        <item>ञ</item>
+        <item>ट</item>
+        <item>ठ</item>
+        <item>ड</item>
+        <item>ढ</item>
+        <item>ण</item>
+        <item>त</item>
+        <item>थ</item>
+        <item>द</item>
+        <item>ध</item>
+        <item>न</item>
+        <item>प</item>
+        <item>फ</item>
+        <item>ब</item>
+        <item>भ</item>
+        <item>म</item>
+        <item>य</item>
+        <item>र</item>
+        <item>ल</item>
+        <item>व</item>
+        <item>श</item>
+        <item>ष</item>
+        <item>स</item>
+        <item>ह</item>
+        <item>ळ</item>
+        <item>retroflexed र</item>
+        <item>hard र</item>
+    </string-array>
+
+    <string-array name="hindi_conjoined_alphabets">
+        <item>क्ष</item>
+        <item>त्र</item>
+        <item>ज्ञ</item>
+        <item>इनन</item>
+        <item>इल</item>
+        <item>न्ट</item>
+        <item>ञ्ञ</item>
+        <item>ञ्च</item>
+        <item>इर</item>
+        <item>इन</item>
+        <item>ൾ</item>
+        <item>क्क</item>
+        <item>क्र</item>
+        <item>ब्र</item>
+        <item>കര</item>
+        <item>ക്ല</item>
+        <item>थ्र</item>
+    </string-array>
+</resources>
