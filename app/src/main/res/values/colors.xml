@@ -12,11 +12,11 @@
     <color name="disable_grey">#55999999</color>
 
     <!--Malayalam Colors-->
-    <color name="Veluppu">@color/white_FFFFFF</color>
-    <color name="Karuppu">@color/black_000000</color>
-    <color name="Manja">#FFFF00</color>
-    <color name="Neela">#0000FF</color>
-    <color name="Pachcha">@color/green_00FF00</color>
-    <color name="Chuvappu">@color/red_FF0000</color>
-    <color name="Velli">#EEEEEE</color>
+    <color name="White">@color/white_FFFFFF</color>
+    <color name="Black">@color/black_000000</color>
+    <color name="Yellow">#FFFF00</color>
+    <color name="Blue">#0000FF</color>
+    <color name="Green">@color/green_00FF00</color>
+    <color name="Red">@color/red_FF0000</color>
+    <color name="Silver">#EEEEEE</color>
 </resources>
