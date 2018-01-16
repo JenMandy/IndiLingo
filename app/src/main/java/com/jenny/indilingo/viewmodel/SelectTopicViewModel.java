@@ -17,31 +17,53 @@ import com.jenny.indilingo.adapter.LearnWordsAdapter;
 
 public class SelectTopicViewModel extends BaseObservable {
     private Context mContext;
+    private String[] topicList;
     public SelectTopicViewModel(Context context) {
         mContext = context;
     }
 
-    public void goToDisplayVowelsActivity(View view) {
+    public void goToDisplayVowelsActivity() {
         Intent intent = new Intent(mContext, AlphabetListActivity.class);
         intent.putExtra(mContext.getResources().getString(R.string.alphabet_type),
                 mContext.getResources().getString(R.string.vowels));
         mContext.startActivity(intent);
     }
 
-    public void goToDisplayConsonantsActivity(View view) {
+    public void goToDisplayConsonantsActivity() {
         Intent intent = new Intent(mContext, AlphabetListActivity.class);
         intent.putExtra(mContext.getResources().getString(R.string.alphabet_type),
                 mContext.getResources().getString(R.string.consonants));
         mContext.startActivity(intent);
     }
 
-    public void goToTestAlphabetsActivity(View view) {
+    public void goToTestAlphabetsActivity() {
         Intent intent = new Intent(mContext, TestListActivity.class);
         mContext.startActivity(intent);
     }
 
-    public void goToLearnWordsActivity(View view) {
+    public void goToLearnWordsActivity() {
         Intent intent = new Intent(mContext, LearnWordsActivity.class);
         mContext.startActivity(intent);
+    }
+
+    public void onButtonClick(Context context, String buttonName) {
+        final String[] topicList = context.getResources().getStringArray(R.array.topics_list);
+        if (topicList[0].equalsIgnoreCase(buttonName)) {
+            goToDisplayVowelsActivity();
+        } else if (topicList[1].equalsIgnoreCase(buttonName)) {
+            goToDisplayConsonantsActivity();
+        } else if (topicList[2].equalsIgnoreCase(buttonName)) {
+            goToTestAlphabetsActivity();
+        } else if (topicList[3].equalsIgnoreCase(buttonName)) {
+            goToLearnWordsActivity();
+        }
+    }
+
+    public void setTopicList(String[] topicList) {
+        this.topicList = topicList;
+    }
+
+    public String[] getTopicList() {
+        return topicList;
     }
 }

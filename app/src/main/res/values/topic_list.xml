@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="topics_list">
+        <item>Vovels</item>
+        <item>Consonants</item>
+        <item>Test\nAlphabets</item>
+        <item>Words</item>
+    </string-array>
+
+    <string-array name="level_list">
+        <item>Level One</item>
+        <item>Level Two</item>
+        <item>Level Three</item>
+        <item>Level Four</item>
+        <item>Level Five</item>
+    </string-array>
+</resources>

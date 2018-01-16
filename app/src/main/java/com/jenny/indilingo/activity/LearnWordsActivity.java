@@ -4,7 +4,6 @@ import android.content.SharedPreferences;
 import android.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.LinearLayoutManager;
 
 import com.jenny.indilingo.R;
 import com.jenny.indilingo.adapter.LearnWordsAdapter;
@@ -32,10 +31,6 @@ public class LearnWordsActivity extends AppCompatActivity {
         activityLearnWordsListBinding.setTestWordsListViewModel(mTestWordsListViewModel);
         mLearnWordsAdapter = new LearnWordsAdapter(this, prefs.getInt(Constants.HIGHEST_LEVEL, -1));
         activityLearnWordsListBinding.wordsLevelList.setAdapter(mLearnWordsAdapter);
-        activityLearnWordsListBinding.wordsLevelList.setHasFixedSize(true);
-        LinearLayoutManager layoutManager
-                = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
-        activityLearnWordsListBinding.wordsLevelList.setLayoutManager(layoutManager);
     }
 
     @Override

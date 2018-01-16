@@ -4,7 +4,6 @@ import android.content.SharedPreferences;
 import android.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.LinearLayoutManager;
 
 import com.jenny.indilingo.R;
 import com.jenny.indilingo.adapter.TestListAdapter;
@@ -30,18 +29,15 @@ public class TestListActivity extends AppCompatActivity {
         mActivityTestListBinding = DataBindingUtil.setContentView(this, R.layout.activity_test_list);
         mTestListViewModel = new TestListViewModel(this);
         mActivityTestListBinding.setTestListViewModel(mTestListViewModel);
-        mTestListAdapter = new TestListAdapter(this, prefs.getInt(Constants.HIGHEST_LEVEL, -1));
+        mTestListViewModel.setLevelList(getResources().getStringArray(R.array.level_list));
+        mTestListAdapter = new TestListAdapter(this, prefs.getInt(Constants.HIGHEST_LEVEL, -1), mTestListViewModel);
         mActivityTestListBinding.testLevelList.setAdapter(mTestListAdapter);
-        mActivityTestListBinding.testLevelList.setHasFixedSize(true);
-        LinearLayoutManager layoutManager
-                = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
-        mActivityTestListBinding.testLevelList.setLayoutManager(layoutManager);
     }
 
     @Override
     protected void onResume() {
         super.onResume();
-        mTestListAdapter = new TestListAdapter(this, prefs.getInt(Constants.HIGHEST_LEVEL, -1));
+        mTestListAdapter = new TestListAdapter(this, prefs.getInt(Constants.HIGHEST_LEVEL, -1), mTestListViewModel);
         mActivityTestListBinding.testLevelList.setAdapter(mTestListAdapter);
         mTestListAdapter.notifyDataSetChanged();
     }

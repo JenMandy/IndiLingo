@@ -3,20 +3,24 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
-    <color name="red_FF0000">#FF0000</color>
-    <color name="green_00FF00">#00FF00</color>
-    <color name="black_000000">#000000</color>
-    <color name="white_FFFFFF">#FFFFFF</color>
-    <color name="transparent_black_99">#99000000</color>
-    <color name="light_blue_d0d5f4">#d0d5f4</color>
-    <color name="disable_grey">#55999999</color>
+    <color name="black">#000000</color>
+    <color name="white">#FFFFFF</color>
+    <color name="red">#FF0000</color>
+    <color name="blue">#0000FF</color>
+    <color name="blue_36">#360000FF</color>
+    <color name="blue_E0">#E00000FF</color>
+    <color name="green">#00FF00</color>
+    <color name="yellow">#FFFF00</color>
+    <color name="silver">#EEEEEE</color>
+    <color name="transparent_99">#99000000</color>
+    <color name="disable">#55999999</color>
 
     <!--Malayalam Colors-->
-    <color name="White">@color/white_FFFFFF</color>
-    <color name="Black">@color/black_000000</color>
-    <color name="Yellow">#FFFF00</color>
-    <color name="Blue">#0000FF</color>
-    <color name="Green">@color/green_00FF00</color>
-    <color name="Red">@color/red_FF0000</color>
-    <color name="Silver">#EEEEEE</color>
+    <color name="White">@color/white</color>
+    <color name="Black">@color/black</color>
+    <color name="Yellow">@color/yellow</color>
+    <color name="Blue">@color/blue</color>
+    <color name="Green">@color/green</color>
+    <color name="Red">@color/red</color>
+    <color name="Silver">@color/silver</color>
 </resources>

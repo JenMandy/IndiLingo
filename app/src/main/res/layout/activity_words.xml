@@ -60,7 +60,7 @@
                         android:layout_height="20dp"
                         android:layout_gravity="center_vertical"
                         android:layout_marginRight="10dp"
-                        android:background="@{wordsViewModel.portionOne ? @color/red_FF0000 : @color/disable_grey}"
+                        android:background="@{wordsViewModel.portionOne ? @color/red : @color/disable}"
                         android:gravity="center" />
                     <!---->
 
@@ -70,7 +70,7 @@
                         android:layout_height="20dp"
                         android:layout_gravity="center_vertical"
                         android:layout_marginRight="10dp"
-                        android:background="@{wordsViewModel.portionTwo ? @color/red_FF0000 : @color/disable_grey}"
+                        android:background="@{wordsViewModel.portionTwo ? @color/red : @color/disable}"
                         android:gravity="center" />
 
                     <TextView
@@ -78,7 +78,7 @@
                         android:layout_width="20dp"
                         android:layout_height="20dp"
                         android:layout_gravity="center_vertical"
-                        android:background="@{wordsViewModel.portionThree ? @color/red_FF0000 : @color/disable_grey}"
+                        android:background="@{wordsViewModel.portionThree ? @color/red : @color/disable}"
                         android:gravity="center" />
                 </LinearLayout>
                 <!--<TextView
@@ -106,13 +106,13 @@
                     android:background="@{wordsViewModel.backgroundColor}"
                     android:foreground="@drawable/alphabet_card_border"
                     android:padding="@dimen/activity_half_margin"
-                    android:shadowColor="@color/black_000000"
+                    android:shadowColor="@color/black"
                     android:shadowDx="3"
                     android:shadowDy="3"
                     android:shadowRadius="3"
                     android:singleLine="true"
                     android:text="@{wordsViewModel.textViewMainData}"
-                    android:textColor="@color/white_FFFFFF"
+                    android:textColor="@color/white"
                     android:textSize="@dimen/main_language_word_text"
                     app:minTextSize="@dimen/main_language_min_word_text" />
             </android.support.v7.widget.CardView>
@@ -328,7 +328,7 @@
             android:id="@+id/overlay"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@color/transparent_black_99"
+            android:background="@color/transparent_99"
             android:gravity="center"
             android:visibility="gone">
 

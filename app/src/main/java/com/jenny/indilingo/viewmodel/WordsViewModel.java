@@ -11,7 +11,6 @@ import android.widget.TextView;
 
 import com.jenny.indilingo.BR;
 import com.jenny.indilingo.R;
-import com.jenny.indilingo.activity.TestAlphabetsActivity;
 import com.jenny.indilingo.activity.WordsActivity;
 import com.jenny.indilingo.util.Constants;
 import com.jenny.indilingo.util.Util;
@@ -152,9 +151,9 @@ public class WordsViewModel extends BaseObservable {
             optionViewLayoutArray[3].setVisibility(View.VISIBLE);
             optionViewLayoutArray[4].setVisibility(View.VISIBLE);
             optionViewLayoutArray[5].setVisibility(View.VISIBLE);
-            optionViewLayoutArray[4].setBackgroundColor(mContext.getResources().getColor(R.color.white_FFFFFF));
+            optionViewLayoutArray[4].setBackgroundColor(mContext.getResources().getColor(R.color.white));
             optionViewLayoutArray[4].setCardElevation(0);
-            optionViewArray[4].setBackgroundColor(mContext.getResources().getColor(R.color.white_FFFFFF));
+            optionViewArray[4].setBackgroundColor(mContext.getResources().getColor(R.color.white));
             optionViewArray[3].setText(mContext.getResources().getString(R.string.previous));
             optionViewArray[5].setText(mContext.getResources().getString(R.string.next));
         } else {
@@ -219,7 +218,7 @@ public class WordsViewModel extends BaseObservable {
         if (isNotTest) {
             backgroundColor = mContext.getResources().getColor(mContext.getResources().getIdentifier(englishWords[position], "color", mContext.getPackageName()));
         } else {
-            backgroundColor = mContext.getResources().getColor(R.color.light_blue_d0d5f4);
+            backgroundColor = mContext.getResources().getColor(R.color.blue_36);
         }
         notifyPropertyChanged(BR.backgroundColor);
     }
@@ -349,12 +348,12 @@ public class WordsViewModel extends BaseObservable {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             for (TextView textView :
                     optionViewArray) {
-                textView.setTextColor(mContext.getColor(R.color.black_000000));
+                textView.setTextColor(mContext.getColor(R.color.black));
             }
         } else {
             for (TextView textView :
                     optionViewArray) {
-                textView.setTextColor(mContext.getResources().getColor(R.color.black_000000));
+                textView.setTextColor(mContext.getResources().getColor(R.color.black));
             }
         }
     }
@@ -365,18 +364,18 @@ public class WordsViewModel extends BaseObservable {
         if (((TextView) view).getText().toString().equals(answer)) {
             setScore();
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-                view.setBackgroundColor(mContext.getColor(R.color.green_00FF00));
+                view.setBackgroundColor(mContext.getColor(R.color.green));
             } else {
-                view.setBackgroundColor(mContext.getResources().getColor(R.color.green_00FF00));
+                view.setBackgroundColor(mContext.getResources().getColor(R.color.green));
             }
         } else {
             setPortion(true, portionNumber);
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-                view.setBackgroundColor(mContext.getColor(R.color.red_FF0000));
-                solutionView.setBackgroundColor(mContext.getColor(R.color.green_00FF00));
+                view.setBackgroundColor(mContext.getColor(R.color.red));
+                solutionView.setBackgroundColor(mContext.getColor(R.color.green));
             } else {
-                view.setBackgroundColor(mContext.getResources().getColor(R.color.red_FF0000));
-                solutionView.setBackgroundColor(mContext.getResources().getColor(R.color.green_00FF00));
+                view.setBackgroundColor(mContext.getResources().getColor(R.color.red));
+                solutionView.setBackgroundColor(mContext.getResources().getColor(R.color.green));
             }
         }
         view.postDelayed(new Runnable() {

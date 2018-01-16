@@ -16,6 +16,7 @@
     <dimen name="main_language_secondary_word_text">36sp</dimen>
     <dimen name="main_language_min_word_text">20sp</dimen>
     <dimen name="secondary_language_text">20sp</dimen>
+    <dimen name="button_text">14sp</dimen>
 
     <!--Test alphabets dimens-->
     <dimen name="score_width">100dp</dimen>

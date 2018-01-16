@@ -214,12 +214,12 @@ public class TestAlphabetsViewModel extends BaseObservable {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             for (TextView textView :
                     optionViewArray) {
-                textView.setTextColor(mContext.getColor(R.color.black_000000));
+                textView.setTextColor(mContext.getColor(R.color.black));
             }
         } else {
             for (TextView textView :
                     optionViewArray) {
-                textView.setTextColor(mContext.getResources().getColor(R.color.black_000000));
+                textView.setTextColor(mContext.getResources().getColor(R.color.black));
             }
         }
     }
@@ -230,18 +230,18 @@ public class TestAlphabetsViewModel extends BaseObservable {
         if (((TextView) view).getText().toString().equals(answer)) {
             setScore();
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-                view.setBackgroundColor(mContext.getColor(R.color.green_00FF00));
+                view.setBackgroundColor(mContext.getColor(R.color.green));
             } else {
-                view.setBackgroundColor(mContext.getResources().getColor(R.color.green_00FF00));
+                view.setBackgroundColor(mContext.getResources().getColor(R.color.green));
             }
         } else {
             setPortion(true, portionNumber);
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-                view.setBackgroundColor(mContext.getColor(R.color.red_FF0000));
-                solutionView.setBackgroundColor(mContext.getColor(R.color.green_00FF00));
+                view.setBackgroundColor(mContext.getColor(R.color.red));
+                solutionView.setBackgroundColor(mContext.getColor(R.color.green));
             } else {
-                view.setBackgroundColor(mContext.getResources().getColor(R.color.red_FF0000));
-                solutionView.setBackgroundColor(mContext.getResources().getColor(R.color.green_00FF00));
+                view.setBackgroundColor(mContext.getResources().getColor(R.color.red));
+                solutionView.setBackgroundColor(mContext.getResources().getColor(R.color.green));
             }
         }
         view.postDelayed(new Runnable() {

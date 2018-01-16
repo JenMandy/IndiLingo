@@ -54,7 +54,7 @@
                         android:layout_height="20dp"
                         android:layout_gravity="center_vertical"
                         android:layout_marginRight="10dp"
-                        android:background="@{testAlphabetsViewModel.portionOne ? @color/red_FF0000 : @color/disable_grey}"
+                        android:background="@{testAlphabetsViewModel.portionOne ? @color/red : @color/disable}"
                         android:gravity="center" />
 
                     <TextView
@@ -63,7 +63,7 @@
                         android:layout_height="20dp"
                         android:layout_gravity="center_vertical"
                         android:layout_marginRight="10dp"
-                        android:background="@{testAlphabetsViewModel.portionTwo ? @color/red_FF0000 : @color/disable_grey}"
+                        android:background="@{testAlphabetsViewModel.portionTwo ? @color/red : @color/disable}"
                         android:gravity="center" />
 
                     <TextView
@@ -71,7 +71,7 @@
                         android:layout_width="20dp"
                         android:layout_height="20dp"
                         android:layout_gravity="center_vertical"
-                        android:background="@{testAlphabetsViewModel.portionThree ? @color/red_FF0000 : @color/disable_grey}"
+                        android:background="@{testAlphabetsViewModel.portionThree ? @color/red : @color/disable}"
                         android:gravity="center" />
                 </LinearLayout>
                 <!--<TextView
@@ -241,7 +241,7 @@
             android:id="@+id/overlay"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@color/transparent_black_99"
+            android:background="@color/transparent_99"
             android:gravity="center"
             android:visibility="gone">
 

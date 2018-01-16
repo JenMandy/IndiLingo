@@ -13,9 +13,18 @@ import com.jenny.indilingo.activity.TestAlphabetsActivity;
 
 public class TestListViewModel extends BaseObservable {
     public Context mContext;
+    private String[] levelList;
 
     public TestListViewModel(Context context) {
         mContext = context;
+    }
+
+    public void setLevelList(String[] levelList) {
+        this.levelList = levelList;
+    }
+
+    public String[] getLevelList() {
+        return levelList;
     }
 /*
     public void goToTestActivity(int testNo) {

@@ -3,67 +3,68 @@ package com.jenny.indilingo.adapter;
 import android.content.Context;
 import android.content.Intent;
 import android.databinding.DataBindingUtil;
-import android.os.Build;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.BaseAdapter;
 
 import com.jenny.indilingo.R;
 import com.jenny.indilingo.activity.TestAlphabetsActivity;
-import com.jenny.indilingo.activity.WordsActivity;
+import com.jenny.indilingo.databinding.ItemSelectTopicBinding;
 import com.jenny.indilingo.databinding.ItemTestListBinding;
+import com.jenny.indilingo.viewmodel.TestListViewModel;
 
 /**
  * Created by jenny on 12/9/16.
  */
 
-public class TestListAdapter extends RecyclerView.Adapter<TestListAdapter.TestListViewHolder> {
+public class TestListAdapter extends BaseAdapter {
 
     private Context mContext;
     private int mHighestLevel;
-    private String[] levelList = {
-            "Level One",
-            "Level Two",
-            "Level Three",
-            "Level Four",
-            "Level Five"
-    };
+    private String[] levelList;
 
-    public TestListAdapter(Context c, int highestLevel) {
+    public TestListAdapter(Context c, int highestLevel, TestListViewModel testListViewModel) {
         mContext = c;
         mHighestLevel = highestLevel;
+        levelList = testListViewModel.getLevelList();
     }
 
     @Override
-    public TestListViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_test_list, parent, false);
-        TestListViewHolder vh = new TestListViewHolder(v);
-        return vh;
-    }
+    public View getView(int position, View view, ViewGroup viewGroup) {
+        final TestListViewHolder holder;
+        if (view == null) {
+            view = LayoutInflater.from(mContext).inflate(R.layout.item_select_topic, viewGroup, false);
+            holder = new TestListViewHolder(view);
+            holder.mSelectTopicBinding.topicName.setText(levelList[position]);
+            holder.mSelectTopicBinding.topicName.setTag(position);
 
-    @Override
-    public void onBindViewHolder(final TestListViewHolder holder, final int position) {
-        holder.mItemTestListBinding.testItem.setText(levelList[position]);
-        holder.mItemTestListBinding.testItem.setTag(position);
-
-        if (position <= (mHighestLevel + 1)) {
-            holder.mItemTestListBinding.testItem.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    Intent intent;
-                    intent = new Intent(mContext, TestAlphabetsActivity.class);
-                    intent.putExtra(mContext.getResources().getString(R.string.test_no), holder.mItemTestListBinding.testItem.getTag().toString());
-                    mContext.startActivity(intent);
-                }
-            });
-        } else {
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-                holder.mItemTestListBinding.testItem.setBackgroundColor(mContext.getColor(R.color.disable_grey));
+            if (position <= (mHighestLevel + 1)) {
+                holder.mSelectTopicBinding.topicName.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        Intent intent;
+                        intent = new Intent(mContext, TestAlphabetsActivity.class);
+                        intent.putExtra(mContext.getResources().getString(R.string.test_no), holder.mSelectTopicBinding.topicName.getTag().toString());
+                        mContext.startActivity(intent);
+                    }
+                });
             } else {
-                holder.mItemTestListBinding.testItem.setBackgroundColor(mContext.getResources().getColor(R.color.disable_grey));
+                holder.mSelectTopicBinding.topicName.setEnabled(false);
             }
         }
+        return view;
+    }
+
+    @Override
+    public int getCount() {
+        return levelList.length;
+    }
+
+    @Override
+    public Object getItem(int i) {
+        return levelList[i];
     }
 
     @Override
@@ -71,17 +72,12 @@ public class TestListAdapter extends RecyclerView.Adapter<TestListAdapter.TestLi
         return 0;
     }
 
-    @Override
-    public int getItemCount() {
-        return levelList.length;
-    }
-
     public class TestListViewHolder extends RecyclerView.ViewHolder {
-        private ItemTestListBinding mItemTestListBinding;
+        private ItemSelectTopicBinding mSelectTopicBinding;
 
         private TestListViewHolder(View view) {
             super(view);
-            mItemTestListBinding = DataBindingUtil.bind(view);
+            mSelectTopicBinding = DataBindingUtil.bind(view);
         }
     }
 }

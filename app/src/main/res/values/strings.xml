@@ -4,7 +4,7 @@
     <string name="title_activity_select_topic">Select A Topic</string>
     <string name="display_alphabets">Display Alphabets</string>
     <string name="display_barakadi">Barakhadi</string>
-    <string name="test_alphabets">Test Alphabets</string>
+    <string name="test_alphabets">Test\nAlphabets</string>
     <string name="words">Words</string>
 
     <!--Select Topic Strings-->
