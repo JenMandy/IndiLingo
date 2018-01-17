@@ -7,16 +7,10 @@
         <!--android:layout_height="wrap_content"-->
         <!---->
         <!--android:padding="@dimen/activity_half_margin">-->
-        <Button
+        <com.jenny.indilingo.util.CircularButton
             android:id="@+id/topic_name"
             android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:maxLines="1"
-            android:gravity="center"
-            android:background="@drawable/rounded_textview"
-            android:padding="@dimen/activity_half_margin"
-            android:textSize="@dimen/button_text"
-            android:inputType="textCapSentences"/>
+            android:layout_height="100dp"/>
     <!--</LinearLayout>-->
 
 </layout>

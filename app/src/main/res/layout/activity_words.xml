@@ -9,10 +9,6 @@
         <variable
             name="wordsViewModel"
             type="com.jenny.indilingo.viewmodel.WordsViewModel" />
-
-        <!--<variable
-            name="position"
-            type="int" />-->
     </data>
 
     <LinearLayout

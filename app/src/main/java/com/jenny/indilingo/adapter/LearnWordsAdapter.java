@@ -45,7 +45,7 @@ public class LearnWordsAdapter extends BaseAdapter {
         if (view == null) {
             view = LayoutInflater.from(mContext).inflate(R.layout.item_select_topic, viewGroup, false);
             holder = new TestListViewHolder(view);
-            holder.mSelectTopicBinding.topicName.setText(levelList[position]);
+            holder.mSelectTopicBinding.topicName.setButtonText(levelList[position]);
             holder.mSelectTopicBinding.topicName.setTag(position);
 
             if (position <= (mHighestLevel + 1)) {
