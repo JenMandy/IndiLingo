@@ -25,6 +25,11 @@ public class SelectTopicActivity extends BaseActivity {
 
         SelectTopicViewModel mSelectTopicViewModel = new SelectTopicViewModel(this);
         mSelectTopicViewModel.setTopicList(getResources().getStringArray(R.array.topics_list));
+        mSelectTopicViewModel.setButtonColor(
+                getResources().getStringArray(R.array.topic_button_enabled_color),
+                getResources().getStringArray(R.array.topic_button_disabled_color),
+                getResources().getStringArray(R.array.topic_button_pressed_color)
+        );
         mActivitySelectTopicBinding.setSelectTopicViewModel(mSelectTopicViewModel);
 
         mActivitySelectTopicBinding.gridSelectTopic.setAdapter(new SelectTopicListAdapter(this, mSelectTopicViewModel));

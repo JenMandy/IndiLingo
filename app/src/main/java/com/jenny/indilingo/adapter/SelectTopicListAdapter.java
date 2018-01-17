@@ -2,6 +2,7 @@ package com.jenny.indilingo.adapter;
 
 import android.content.Context;
 import android.databinding.DataBindingUtil;
+import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -20,12 +21,18 @@ public class SelectTopicListAdapter extends BaseAdapter {
 
     private Context mContext;
     private String[] topicList;
+    private String[] enabledColor;
+    private String[] disabledColor;
+    private String[] pressedColor;
     private SelectTopicViewModel mSelectTopicViewModel;
 
     public SelectTopicListAdapter(Context c, SelectTopicViewModel selectTopicViewModel) {
         mContext = c;
         mSelectTopicViewModel = selectTopicViewModel;
         topicList = selectTopicViewModel.getTopicList();
+        enabledColor = selectTopicViewModel.getButtonEnabledColor();
+        disabledColor = selectTopicViewModel.getButtonDisabledColor();
+        pressedColor = selectTopicViewModel.getButtonPressedColor();
     }
 
     private class SelectTopicViewHolder {
@@ -44,6 +51,11 @@ public class SelectTopicListAdapter extends BaseAdapter {
             selectTopicViewHolder = new SelectTopicViewHolder(view);
             selectTopicViewHolder.mItemSelectTopicBinding.topicName.setButtonText(topicList[position]);
             selectTopicViewHolder.mItemSelectTopicBinding.topicName.setButtonTextSize(16);
+            selectTopicViewHolder.mItemSelectTopicBinding.topicName.setButtonBackground(
+                    Color.parseColor(enabledColor[position]),
+                    Color.parseColor(pressedColor[position]),
+                    Color.parseColor(disabledColor[position])
+                    );
             selectTopicViewHolder.mItemSelectTopicBinding.topicName.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {

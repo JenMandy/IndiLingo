@@ -18,6 +18,9 @@ import com.jenny.indilingo.adapter.LearnWordsAdapter;
 public class SelectTopicViewModel extends BaseObservable {
     private Context mContext;
     private String[] topicList;
+    private String[] enabledColor;
+    private String[] disabledColor;
+    private String[] pressedColor;
     public SelectTopicViewModel(Context context) {
         mContext = context;
     }
@@ -65,5 +68,23 @@ public class SelectTopicViewModel extends BaseObservable {
 
     public String[] getTopicList() {
         return topicList;
+    }
+
+    public void setButtonColor(String[] enabledColor, String[] disabledColor, String[] pressedColor) {
+        this.enabledColor = enabledColor;
+        this.disabledColor = disabledColor;
+        this.pressedColor = pressedColor;
+    }
+
+    public String[] getButtonEnabledColor() {
+        return enabledColor;
+    }
+
+    public String[] getButtonDisabledColor() {
+        return disabledColor;
+    }
+
+    public String[] getButtonPressedColor() {
+        return pressedColor;
     }
 }

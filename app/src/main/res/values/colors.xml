@@ -5,11 +5,17 @@
     <color name="colorAccent">#FF4081</color>
     <color name="black">#000000</color>
     <color name="white">#FFFFFF</color>
+    <!--<color name="red_36">#36FF0000</color>-->
+    <!--<color name="red_E0">#E0FF0000</color>-->
     <color name="red">#FF0000</color>
     <color name="blue_36">#360000FF</color>
     <color name="blue_E0">#E00000FF</color>
     <color name="blue">#0000FF</color>
+    <!--<color name="forest_green_36">#36228B22</color>-->
+    <!--<color name="forest_green_E0">#E0228B22</color>-->
     <color name="green">#00FF00</color>
+    <!--<color name="yellow_36">#36FF7D00</color>-->
+    <!--<color name="yellow_E0">#E0FF7D00</color>-->
     <color name="yellow">#FFFF00</color>
     <color name="silver">#EEEEEE</color>
     <color name="transparent_99">#99000000</color>

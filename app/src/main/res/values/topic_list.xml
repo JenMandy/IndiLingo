@@ -14,4 +14,25 @@
         <item>Level Four</item>
         <item>Level Five</item>
     </string-array>
+
+    <string-array name="topic_button_enabled_color">
+        <item>#E0FF7D00</item>
+        <item>#E0FF0000</item>
+        <item>#E00000FF</item>
+        <item>#E0228B22</item>
+    </string-array>
+
+    <string-array name="topic_button_disabled_color">
+        <item>#55999999</item>
+        <item>#55999999</item>
+        <item>#55999999</item>
+        <item>#55999999</item>
+    </string-array>
+
+    <string-array name="topic_button_pressed_color">
+        <item>#36FF7D00</item>
+        <item>#36FF0000</item>
+        <item>#360000FF</item>
+        <item>#36228B22</item>
+    </string-array>
 </resources>
