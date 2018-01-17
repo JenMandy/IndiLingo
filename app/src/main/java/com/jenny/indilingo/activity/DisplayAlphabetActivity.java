@@ -3,6 +3,7 @@ package com.jenny.indilingo.activity;
 import android.databinding.DataBindingUtil;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.view.View;
 
 import com.jenny.indilingo.R;
@@ -10,7 +11,7 @@ import com.jenny.indilingo.databinding.ActivityDisplayAlphabetBinding;
 import com.jenny.indilingo.viewmodel.DisplayAlphabetViewModel;
 import com.jenny.indilingo.widgets.OnSwipeTouchListener;
 
-public class DisplayAlphabetActivity extends AppCompatActivity {
+public class DisplayAlphabetActivity extends BaseActivity {
 
     public ActivityDisplayAlphabetBinding mActivityDisplayAlphabetBinding;
     public DisplayAlphabetViewModel mDisplayAlphabetViewModel;
@@ -19,6 +20,15 @@ public class DisplayAlphabetActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         mActivityDisplayAlphabetBinding = DataBindingUtil.setContentView(this, R.layout.activity_display_alphabet);
+
+        Toolbar mToolbar = (Toolbar) findViewById(R.id.toolbar);
+        mToolbar.setTitle(getString(R.string.app_name));
+        setSupportActionBar(mToolbar);
+
+        if (getSupportActionBar() != null){
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        }
+
         mDisplayAlphabetViewModel = new DisplayAlphabetViewModel(this);
         mActivityDisplayAlphabetBinding.setDisplayAlphabetViewModel(mDisplayAlphabetViewModel);
         mDisplayAlphabetViewModel.setPosition(getIntent().getIntExtra(getResources().getString(R.string.alphabet_no), 0));

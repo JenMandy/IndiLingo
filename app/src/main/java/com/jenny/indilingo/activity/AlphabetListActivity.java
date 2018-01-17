@@ -4,6 +4,9 @@ import android.content.Intent;
 import android.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 
@@ -16,7 +19,7 @@ import com.jenny.indilingo.viewmodel.AlphabetListViewModel;
  * Created by jenny on 12/8/16.
  */
 
-public class AlphabetListActivity extends AppCompatActivity {
+public class AlphabetListActivity extends BaseActivity {
 
     public ActivityAlphabetListBinding mActivityAlphabetListBinding;
     public AlphabetListViewModel mAlphabetListViewModel;
@@ -25,6 +28,15 @@ public class AlphabetListActivity extends AppCompatActivity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         mActivityAlphabetListBinding = DataBindingUtil.setContentView(this, R.layout.activity_alphabet_list);
+
+        Toolbar mToolbar = (Toolbar) findViewById(R.id.toolbar);
+        mToolbar.setTitle(getString(R.string.app_name));
+        setSupportActionBar(mToolbar);
+
+        if (getSupportActionBar() != null){
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        }
+
         mAlphabetListViewModel = new AlphabetListViewModel();
         if (getIntent().getStringExtra(getResources().getString(R.string.alphabet_type)).
                 equals(getResources().getString(R.string.vowels))) {

@@ -4,6 +4,7 @@ import android.content.SharedPreferences;
 import android.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 
 import com.jenny.indilingo.R;
 import com.jenny.indilingo.adapter.LearnWordsAdapter;
@@ -15,7 +16,7 @@ import com.jenny.indilingo.viewmodel.TestWordsListViewModel;
  * Created by jenny on 12/7/16.
  */
 
-public class LearnWordsActivity extends AppCompatActivity {
+public class LearnWordsActivity extends BaseActivity {
 
     public ActivityLearnWordsListBinding activityLearnWordsListBinding;
     private TestWordsListViewModel mTestWordsListViewModel;
@@ -27,6 +28,15 @@ public class LearnWordsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         prefs = getSharedPreferences(Constants.USER_DATA, MODE_PRIVATE);
         activityLearnWordsListBinding = DataBindingUtil.setContentView(this, R.layout.activity_learn_words_list);
+
+        Toolbar mToolbar = (Toolbar) findViewById(R.id.toolbar);
+        mToolbar.setTitle(getString(R.string.app_name));
+        setSupportActionBar(mToolbar);
+
+        if (getSupportActionBar() != null){
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        }
+
         mTestWordsListViewModel = new TestWordsListViewModel(this);
         activityLearnWordsListBinding.setTestWordsListViewModel(mTestWordsListViewModel);
         mLearnWordsAdapter = new LearnWordsAdapter(this, prefs.getInt(Constants.HIGHEST_LEVEL, -1));

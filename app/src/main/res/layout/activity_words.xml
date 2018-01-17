@@ -15,331 +15,346 @@
             type="int" />-->
     </data>
 
-    <FrameLayout
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:paddingBottom="@dimen/activity_vertical_margin"
-        android:paddingLeft="@dimen/activity_horizontal_margin"
-        android:paddingRight="@dimen/activity_horizontal_margin"
-        android:paddingTop="@dimen/activity_vertical_margin">
+        android:orientation="vertical">
 
-        <LinearLayout
-            android:id="@+id/activity_test_alphabets"
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="?attr/colorPrimary"
+            android:elevation="@dimen/elevation"
+            android:minHeight="?attr/actionBarSize" />
+
+        <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical"
-            android:weightSum="3">
+            android:paddingBottom="@dimen/activity_vertical_margin"
+            android:paddingLeft="@dimen/activity_horizontal_margin"
+            android:paddingRight="@dimen/activity_horizontal_margin"
+            android:paddingTop="@dimen/activity_vertical_margin">
 
-            <RelativeLayout
+            <LinearLayout
+                android:id="@+id/activity_test_alphabets"
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/zero_dp"
-                android:layout_weight="0.3">
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:weightSum="3">
+
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/zero_dp"
+                    android:layout_weight="0.3">
+
+                    <TextView
+                        android:id="@+id/question"
+                        android:layout_width="@dimen/score_width"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="left"
+                        android:gravity="center"
+                        android:text="@{wordsViewModel.questionNo}"
+                        android:textSize="@dimen/secondary_language_text" />
+
+                    <LinearLayout
+                        android:id="@+id/score"
+                        android:layout_width="@dimen/score_width"
+                        android:layout_height="match_parent"
+                        android:layout_alignParentRight="true"
+                        android:layout_gravity="right"
+                        android:orientation="horizontal"
+                        android:paddingLeft="10dp"
+                        android:paddingRight="10dp">
+
+                        <TextView
+                            android:id="@+id/portion_one"
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginRight="10dp"
+                            android:background="@{wordsViewModel.portionOne ? @color/red : @color/disable}"
+                            android:gravity="center" />
+                        <!---->
+
+                        <TextView
+                            android:id="@+id/portion_two"
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginRight="10dp"
+                            android:background="@{wordsViewModel.portionTwo ? @color/red : @color/disable}"
+                            android:gravity="center" />
+
+                        <TextView
+                            android:id="@+id/portion_three"
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:layout_gravity="center_vertical"
+                            android:background="@{wordsViewModel.portionThree ? @color/red : @color/disable}"
+                            android:gravity="center" />
+                    </LinearLayout>
+                    <!--<TextView
+                        android:id="@+id/score"
+                        android:layout_width="@dimen/score_width"
+                        android:layout_height="match_parent"
+                        android:layout_alignParentRight="true"
+                        android:layout_gravity="right"
+                        android:gravity="center"
+                        android:text="@{wordsViewModel.score}"
+                        android:textSize="@dimen/secondary_language_text" />-->
+                </RelativeLayout>
+
+                <android.support.v7.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/zero_dp"
+                    android:layout_weight="1"
+                    android:elevation="@dimen/elevation">
+
+                    <me.grantland.widget.AutofitTextView
+                        android:id="@+id/main_language"
+                        style="@style/CardStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@{wordsViewModel.backgroundColor}"
+                        android:foreground="@drawable/alphabet_card_border"
+                        android:padding="@dimen/activity_half_margin"
+                        android:shadowColor="@color/black"
+                        android:shadowDx="3"
+                        android:shadowDy="3"
+                        android:shadowRadius="3"
+                        android:singleLine="true"
+                        android:text="@{wordsViewModel.textViewMainData}"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/main_language_word_text"
+                        app:minTextSize="@dimen/main_language_min_word_text" />
+                </android.support.v7.widget.CardView>
+
+                <!--<android.support.v7.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height=""
+
+                    android:elevation="@dimen/elevation">-->
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/zero_dp"
+                    android:layout_marginTop="@dimen/activity_vertical_margin"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:weightSum="2">
+
+                    <android.support.v7.widget.CardView
+                        android:id="@+id/language_1_wrapper"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/zero_dp"
+                        android:layout_marginBottom="@dimen/activity_half_margin"
+                        android:layout_weight="1"
+                        android:elevation="@dimen/elevation"
+                        android:visibility="@{wordsViewModel.languageOneVisibility ? View.VISIBLE : View.INVISIBLE, default = visible}">
+
+                        <me.grantland.widget.AutofitTextView
+                            android:id="@+id/language_1"
+                            style="@style/CardStyle"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@drawable/alphabet_card_border"
+                            android:singleLine="true"
+                            android:text="@{wordsViewModel.secondaryData}"
+                            android:textSize="@dimen/main_language_secondary_word_text"
+                            app:minTextSize="@dimen/main_language_min_word_text" />
+                        <!--android:text="@{wordsViewModel.textViewMainData}"-->
+                    </android.support.v7.widget.CardView>
+
+                    <android.support.v7.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/zero_dp"
+                        android:layout_marginBottom="@dimen/activity_half_margin"
+                        android:layout_marginTop="@dimen/activity_half_margin"
+                        android:layout_weight="1"
+                        android:elevation="@dimen/elevation"
+                        android:visibility="gone">
+
+                        <me.grantland.widget.AutofitTextView
+                            android:id="@+id/language_2"
+                            style="@style/CardStyle"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@drawable/alphabet_card_border"
+                            android:singleLine="true"
+                            android:textSize="@dimen/main_language_text"
+                            app:minTextSize="@dimen/main_language_min_text" />
+                        <!--android:text="@{wordsViewModel.textViewMainData}"-->
+                    </android.support.v7.widget.CardView>
+                </LinearLayout>
+                <!--</android.support.v7.widget.CardView>-->
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/zero_dp"
+                    android:layout_weight="0.7"
+                    android:orientation="vertical"
+                    android:weightSum="2">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/zero_dp"
+                        android:layout_marginBottom="@dimen/activity_half_margin"
+                        android:layout_weight="1"
+                        android:orientation="horizontal"
+                        android:weightSum="3">
+
+                        <android.support.v7.widget.CardView
+                            android:id="@+id/option_one_layout"
+                            android:layout_width="@dimen/zero_dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginRight="@dimen/activity_half_margin"
+                            android:layout_weight="1"
+                            android:elevation="@dimen/elevation"
+                            android:visibility="gone">
+
+                            <TextView
+                                android:id="@+id/option_one"
+                                style="@style/CardStyle"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:background="@drawable/alphabet_card_border"
+                                android:onClick="@{wordsViewModel.checkAnswer}"
+                                android:textSize="@dimen/secondary_language_text" />
+                            <!--android:onClick="@{wordsViewModel.checkAnswer}"-->
+                        </android.support.v7.widget.CardView>
+
+                        <android.support.v7.widget.CardView
+                            android:id="@+id/option_two_layout"
+                            android:layout_width="@dimen/zero_dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="@dimen/activity_half_margin"
+                            android:layout_marginRight="@dimen/activity_half_margin"
+                            android:layout_weight="1"
+                            android:elevation="@dimen/elevation"
+                            android:visibility="gone">
+
+                            <TextView
+                                android:id="@+id/option_two"
+                                style="@style/CardStyle"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:background="@drawable/alphabet_card_border"
+                                android:onClick="@{wordsViewModel.checkAnswer}"
+                                android:textSize="@dimen/secondary_language_text" />
+                            <!--android:onClick="@{wordsViewModel.checkAnswer}"-->
+                        </android.support.v7.widget.CardView>
+
+                        <android.support.v7.widget.CardView
+                            android:id="@+id/option_three_layout"
+                            android:layout_width="@dimen/zero_dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="@dimen/activity_half_margin"
+                            android:layout_weight="1"
+                            android:elevation="@dimen/elevation"
+                            android:visibility="gone">
+
+                            <TextView
+                                android:id="@+id/option_three"
+                                style="@style/CardStyle"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:background="@drawable/alphabet_card_border"
+                                android:onClick="@{wordsViewModel.checkAnswer}"
+                                android:textSize="@dimen/secondary_language_text" />
+                            <!--android:onClick="@{wordsViewModel.checkAnswer}"-->
+                        </android.support.v7.widget.CardView>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/zero_dp"
+                        android:layout_marginTop="@dimen/activity_half_margin"
+                        android:layout_weight="1"
+                        android:orientation="horizontal"
+                        android:weightSum="3">
+
+                        <android.support.v7.widget.CardView
+                            android:id="@+id/option_four_layout"
+                            android:layout_width="@dimen/zero_dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginRight="@dimen/activity_half_margin"
+                            android:layout_weight="1"
+                            android:elevation="@dimen/elevation"
+                            android:visibility="gone">
+
+                            <TextView
+                                android:id="@+id/option_four"
+                                style="@style/CardStyle"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:background="@drawable/alphabet_card_border"
+                                android:onClick="@{(v) -> wordsViewModel.onNextClick(v, false)}"
+                                android:textSize="@dimen/secondary_language_text" />
+                        </android.support.v7.widget.CardView>
+
+                        <android.support.v7.widget.CardView
+                            android:id="@+id/option_five_layout"
+                            android:layout_width="@dimen/zero_dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="@dimen/activity_half_margin"
+                            android:layout_marginRight="@dimen/activity_half_margin"
+                            android:layout_weight="1"
+                            android:elevation="@dimen/elevation"
+                            android:visibility="gone">
+
+                            <TextView
+                                android:id="@+id/option_five"
+                                style="@style/CardStyle"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:background="@drawable/alphabet_card_border"
+                                android:onClick="@{wordsViewModel.checkAnswer}"
+                                android:textSize="@dimen/secondary_language_text" />
+                        </android.support.v7.widget.CardView>
+
+                        <android.support.v7.widget.CardView
+                            android:id="@+id/option_six_layout"
+                            android:layout_width="@dimen/zero_dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="@dimen/activity_half_margin"
+                            android:layout_weight="1"
+                            android:elevation="@dimen/elevation"
+                            android:visibility="gone">
+
+                            <TextView
+                                android:id="@+id/option_six"
+                                style="@style/CardStyle"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:background="@drawable/alphabet_card_border"
+                                android:onClick="@{(v) -> wordsViewModel.onNextClick(v, true)}"
+                                android:textSize="@dimen/secondary_language_text" />
+                        </android.support.v7.widget.CardView>
+
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/overlay"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/transparent_99"
+                android:gravity="center"
+                android:visibility="gone">
 
                 <TextView
-                    android:id="@+id/question"
-                    android:layout_width="@dimen/score_width"
-                    android:layout_height="match_parent"
-                    android:layout_gravity="left"
+                    android:id="@+id/final_score"
+                    android:layout_width="@dimen/final_score_width"
+                    android:layout_height="@dimen/final_score_height"
+                    android:background="@drawable/alphabet_card_border"
                     android:gravity="center"
-                    android:text="@{wordsViewModel.questionNo}"
+                    android:text="@{wordsViewModel.finalScore}"
                     android:textSize="@dimen/secondary_language_text" />
-
-                <LinearLayout
-                    android:id="@+id/score"
-                    android:layout_width="@dimen/score_width"
-                    android:layout_height="match_parent"
-                    android:layout_alignParentRight="true"
-                    android:layout_gravity="right"
-                    android:orientation="horizontal"
-                    android:paddingLeft="10dp"
-                    android:paddingRight="10dp">
-
-                    <TextView
-                        android:id="@+id/portion_one"
-                        android:layout_width="20dp"
-                        android:layout_height="20dp"
-                        android:layout_gravity="center_vertical"
-                        android:layout_marginRight="10dp"
-                        android:background="@{wordsViewModel.portionOne ? @color/red : @color/disable}"
-                        android:gravity="center" />
-                    <!---->
-
-                    <TextView
-                        android:id="@+id/portion_two"
-                        android:layout_width="20dp"
-                        android:layout_height="20dp"
-                        android:layout_gravity="center_vertical"
-                        android:layout_marginRight="10dp"
-                        android:background="@{wordsViewModel.portionTwo ? @color/red : @color/disable}"
-                        android:gravity="center" />
-
-                    <TextView
-                        android:id="@+id/portion_three"
-                        android:layout_width="20dp"
-                        android:layout_height="20dp"
-                        android:layout_gravity="center_vertical"
-                        android:background="@{wordsViewModel.portionThree ? @color/red : @color/disable}"
-                        android:gravity="center" />
-                </LinearLayout>
-                <!--<TextView
-                    android:id="@+id/score"
-                    android:layout_width="@dimen/score_width"
-                    android:layout_height="match_parent"
-                    android:layout_alignParentRight="true"
-                    android:layout_gravity="right"
-                    android:gravity="center"
-                    android:text="@{wordsViewModel.score}"
-                    android:textSize="@dimen/secondary_language_text" />-->
-            </RelativeLayout>
-
-            <android.support.v7.widget.CardView
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/zero_dp"
-                android:layout_weight="1"
-                android:elevation="@dimen/elevation">
-
-                <me.grantland.widget.AutofitTextView
-                    android:id="@+id/main_language"
-                    style="@style/CardStyle"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:background="@{wordsViewModel.backgroundColor}"
-                    android:foreground="@drawable/alphabet_card_border"
-                    android:padding="@dimen/activity_half_margin"
-                    android:shadowColor="@color/black"
-                    android:shadowDx="3"
-                    android:shadowDy="3"
-                    android:shadowRadius="3"
-                    android:singleLine="true"
-                    android:text="@{wordsViewModel.textViewMainData}"
-                    android:textColor="@color/white"
-                    android:textSize="@dimen/main_language_word_text"
-                    app:minTextSize="@dimen/main_language_min_word_text" />
-            </android.support.v7.widget.CardView>
-
-            <!--<android.support.v7.widget.CardView
-                android:layout_width="match_parent"
-                android:layout_height=""
-
-                android:elevation="@dimen/elevation">-->
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/zero_dp"
-                android:layout_marginTop="@dimen/activity_vertical_margin"
-                android:layout_weight="1"
-                android:orientation="vertical"
-                android:weightSum="2">
-
-                <android.support.v7.widget.CardView
-                    android:id="@+id/language_1_wrapper"
-                    android:layout_width="match_parent"
-                    android:layout_height="@dimen/zero_dp"
-                    android:layout_marginBottom="@dimen/activity_half_margin"
-                    android:layout_weight="1"
-                    android:elevation="@dimen/elevation"
-                    android:visibility="@{wordsViewModel.languageOneVisibility ? View.VISIBLE : View.INVISIBLE, default = visible}">
-
-                    <me.grantland.widget.AutofitTextView
-                        android:id="@+id/language_1"
-                        style="@style/CardStyle"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:background="@drawable/alphabet_card_border"
-                        android:singleLine="true"
-                        android:text="@{wordsViewModel.secondaryData}"
-                        android:textSize="@dimen/main_language_secondary_word_text"
-                        app:minTextSize="@dimen/main_language_min_word_text" />
-                    <!--android:text="@{wordsViewModel.textViewMainData}"-->
-                </android.support.v7.widget.CardView>
-
-                <android.support.v7.widget.CardView
-                    android:layout_width="match_parent"
-                    android:layout_height="@dimen/zero_dp"
-                    android:layout_marginBottom="@dimen/activity_half_margin"
-                    android:layout_marginTop="@dimen/activity_half_margin"
-                    android:layout_weight="1"
-                    android:elevation="@dimen/elevation"
-                    android:visibility="gone">
-
-                    <me.grantland.widget.AutofitTextView
-                        android:id="@+id/language_2"
-                        style="@style/CardStyle"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:background="@drawable/alphabet_card_border"
-                        android:singleLine="true"
-                        android:textSize="@dimen/main_language_text"
-                        app:minTextSize="@dimen/main_language_min_text" />
-                    <!--android:text="@{wordsViewModel.textViewMainData}"-->
-                </android.support.v7.widget.CardView>
             </LinearLayout>
-            <!--</android.support.v7.widget.CardView>-->
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/zero_dp"
-                android:layout_weight="0.7"
-                android:orientation="vertical"
-                android:weightSum="2">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="@dimen/zero_dp"
-                    android:layout_marginBottom="@dimen/activity_half_margin"
-                    android:layout_weight="1"
-                    android:orientation="horizontal"
-                    android:weightSum="3">
-
-                    <android.support.v7.widget.CardView
-                        android:id="@+id/option_one_layout"
-                        android:layout_width="@dimen/zero_dp"
-                        android:layout_height="match_parent"
-                        android:layout_marginRight="@dimen/activity_half_margin"
-                        android:layout_weight="1"
-                        android:elevation="@dimen/elevation"
-                        android:visibility="gone">
-
-                        <TextView
-                            android:id="@+id/option_one"
-                            style="@style/CardStyle"
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:background="@drawable/alphabet_card_border"
-                            android:onClick="@{wordsViewModel.checkAnswer}"
-                            android:textSize="@dimen/secondary_language_text" />
-                        <!--android:onClick="@{wordsViewModel.checkAnswer}"-->
-                    </android.support.v7.widget.CardView>
-
-                    <android.support.v7.widget.CardView
-                        android:id="@+id/option_two_layout"
-                        android:layout_width="@dimen/zero_dp"
-                        android:layout_height="match_parent"
-                        android:layout_marginLeft="@dimen/activity_half_margin"
-                        android:layout_marginRight="@dimen/activity_half_margin"
-                        android:layout_weight="1"
-                        android:elevation="@dimen/elevation"
-                        android:visibility="gone">
-
-                        <TextView
-                            android:id="@+id/option_two"
-                            style="@style/CardStyle"
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:background="@drawable/alphabet_card_border"
-                            android:onClick="@{wordsViewModel.checkAnswer}"
-                            android:textSize="@dimen/secondary_language_text" />
-                        <!--android:onClick="@{wordsViewModel.checkAnswer}"-->
-                    </android.support.v7.widget.CardView>
-
-                    <android.support.v7.widget.CardView
-                        android:id="@+id/option_three_layout"
-                        android:layout_width="@dimen/zero_dp"
-                        android:layout_height="match_parent"
-                        android:layout_marginLeft="@dimen/activity_half_margin"
-                        android:layout_weight="1"
-                        android:elevation="@dimen/elevation"
-                        android:visibility="gone">
-
-                        <TextView
-                            android:id="@+id/option_three"
-                            style="@style/CardStyle"
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:background="@drawable/alphabet_card_border"
-                            android:onClick="@{wordsViewModel.checkAnswer}"
-                            android:textSize="@dimen/secondary_language_text" />
-                        <!--android:onClick="@{wordsViewModel.checkAnswer}"-->
-                    </android.support.v7.widget.CardView>
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="@dimen/zero_dp"
-                    android:layout_marginTop="@dimen/activity_half_margin"
-                    android:layout_weight="1"
-                    android:orientation="horizontal"
-                    android:weightSum="3">
-
-                    <android.support.v7.widget.CardView
-                        android:id="@+id/option_four_layout"
-                        android:layout_width="@dimen/zero_dp"
-                        android:layout_height="match_parent"
-                        android:layout_marginRight="@dimen/activity_half_margin"
-                        android:layout_weight="1"
-                        android:elevation="@dimen/elevation"
-                        android:visibility="gone">
-
-                        <TextView
-                            android:id="@+id/option_four"
-                            style="@style/CardStyle"
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:background="@drawable/alphabet_card_border"
-                            android:onClick="@{(v) -> wordsViewModel.onNextClick(v, false)}"
-                            android:textSize="@dimen/secondary_language_text" />
-                    </android.support.v7.widget.CardView>
-
-                    <android.support.v7.widget.CardView
-                        android:id="@+id/option_five_layout"
-                        android:layout_width="@dimen/zero_dp"
-                        android:layout_height="match_parent"
-                        android:layout_marginLeft="@dimen/activity_half_margin"
-                        android:layout_marginRight="@dimen/activity_half_margin"
-                        android:layout_weight="1"
-                        android:elevation="@dimen/elevation"
-                        android:visibility="gone">
-
-                        <TextView
-                            android:id="@+id/option_five"
-                            style="@style/CardStyle"
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:background="@drawable/alphabet_card_border"
-                            android:onClick="@{wordsViewModel.checkAnswer}"
-                            android:textSize="@dimen/secondary_language_text" />
-                    </android.support.v7.widget.CardView>
-
-                    <android.support.v7.widget.CardView
-                        android:id="@+id/option_six_layout"
-                        android:layout_width="@dimen/zero_dp"
-                        android:layout_height="match_parent"
-                        android:layout_marginLeft="@dimen/activity_half_margin"
-                        android:layout_weight="1"
-                        android:elevation="@dimen/elevation"
-                        android:visibility="gone">
-
-                        <TextView
-                            android:id="@+id/option_six"
-                            style="@style/CardStyle"
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:background="@drawable/alphabet_card_border"
-                            android:onClick="@{(v) -> wordsViewModel.onNextClick(v, true)}"
-                            android:textSize="@dimen/secondary_language_text" />
-                    </android.support.v7.widget.CardView>
-
-                </LinearLayout>
-            </LinearLayout>
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/overlay"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@color/transparent_99"
-            android:gravity="center"
-            android:visibility="gone">
-
-            <TextView
-                android:id="@+id/final_score"
-                android:layout_width="@dimen/final_score_width"
-                android:layout_height="@dimen/final_score_height"
-                android:background="@drawable/alphabet_card_border"
-                android:gravity="center"
-                android:text="@{wordsViewModel.finalScore}"
-                android:textSize="@dimen/secondary_language_text" />
-        </LinearLayout>
-    </FrameLayout>
+        </FrameLayout>
+    </LinearLayout>
 </layout>

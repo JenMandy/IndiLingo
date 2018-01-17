@@ -4,6 +4,7 @@ import android.content.SharedPreferences;
 import android.databinding.DataBindingUtil;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 
 import com.jenny.indilingo.R;
 import com.jenny.indilingo.databinding.ActivityTestAlphabetsBinding;
@@ -11,7 +12,7 @@ import com.jenny.indilingo.util.Constants;
 import com.jenny.indilingo.util.Util;
 import com.jenny.indilingo.viewmodel.TestAlphabetsViewModel;
 
-public class TestAlphabetsActivity extends AppCompatActivity {
+public class TestAlphabetsActivity extends BaseActivity {
 
     public static final String USER_DATA = "userData";
     public ActivityTestAlphabetsBinding mActivityTestAlphabetsBinding;
@@ -20,6 +21,15 @@ public class TestAlphabetsActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         mActivityTestAlphabetsBinding = DataBindingUtil.setContentView(this, R.layout.activity_test_alphabets);
+
+        Toolbar mToolbar = (Toolbar) findViewById(R.id.toolbar);
+        mToolbar.setTitle(getString(R.string.app_name));
+        setSupportActionBar(mToolbar);
+
+        if (getSupportActionBar() != null){
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        }
+
         TestAlphabetsViewModel mTestAlphabetsViewModel = new TestAlphabetsViewModel(this,
                 Integer.parseInt(getIntent().getStringExtra(getResources().getString(R.string.test_no))));
         mActivityTestAlphabetsBinding.setTestAlphabetsViewModel(mTestAlphabetsViewModel);

@@ -10,92 +10,106 @@
     </data>
 
     <LinearLayout
-        android:id="@+id/display_alphabet_relative_layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:paddingBottom="@dimen/activity_vertical_margin"
-        android:paddingLeft="@dimen/activity_horizontal_margin"
-        android:paddingRight="@dimen/activity_horizontal_margin"
-        android:paddingTop="@dimen/activity_vertical_margin"
-        android:weightSum="2">
+        android:orientation="vertical">
 
-        <android.support.v7.widget.CardView
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
             android:layout_width="match_parent"
-            android:layout_height="@dimen/zero_dp"
-            android:layout_marginBottom="@dimen/activity_vertical_margin"
-            android:layout_weight="1.7">
+            android:layout_height="wrap_content"
+            android:background="?attr/colorPrimary"
+            android:elevation="@dimen/elevation"
+            android:minHeight="?attr/actionBarSize" />
+
+        <LinearLayout
+            android:id="@+id/display_alphabet_relative_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:paddingBottom="@dimen/activity_vertical_margin"
+            android:paddingLeft="@dimen/activity_horizontal_margin"
+            android:paddingRight="@dimen/activity_horizontal_margin"
+            android:paddingTop="@dimen/activity_vertical_margin"
+            android:weightSum="2">
+
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/zero_dp"
+                android:layout_marginBottom="@dimen/activity_vertical_margin"
+                android:layout_weight="1.7">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/alphabet_card_border"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/view_barakhadi_text_view"
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/final_score_height"
+                        android:layout_gravity="end"
+                        android:gravity="center"
+                        android:onClick="@{displayAlphabetViewModel.goToBarakhadiScreen}"
+                        android:padding="@dimen/activity_half_margin"
+                        android:text="@string/view_barakhadi"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="@dimen/secondary_language_text"
+                        android:textStyle="italic"
+                        android:visibility="gone" />
+
+                    <me.grantland.widget.AutofitTextView
+                        android:id="@+id/display_alphabet_text_view"
+                        style="@style/CardStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:maxLines="1"
+                        android:text="@{displayAlphabetViewModel.getTextViewMainData}"
+                        android:textSize="@dimen/main_language_text"
+                        app:minTextSize="@dimen/main_language_min_text" />
+                </LinearLayout>
+            </android.support.v7.widget.CardView>
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="@drawable/alphabet_card_border"
-                android:orientation="vertical">
+                android:layout_height="@dimen/zero_dp"
+                android:layout_weight="0.3"
+                android:orientation="horizontal"
+                android:weightSum="1">
 
-                <TextView
-                    android:id="@+id/view_barakhadi_text_view"
-                    android:layout_width="wrap_content"
-                    android:layout_height="@dimen/final_score_height"
-                    android:layout_gravity="end"
-                    android:gravity="center"
-                    android:onClick="@{displayAlphabetViewModel.goToBarakhadiScreen}"
-                    android:padding="@dimen/activity_half_margin"
-                    android:text="@string/view_barakhadi"
-                    android:textColor="@color/colorPrimary"
-                    android:textSize="@dimen/secondary_language_text"
-                    android:textStyle="italic"
-                    android:visibility="gone" />
-
-                <me.grantland.widget.AutofitTextView
-                    android:id="@+id/display_alphabet_text_view"
-                    style="@style/CardStyle"
-                    android:layout_width="match_parent"
+                <android.support.v7.widget.CardView
+                    android:layout_width="@dimen/zero_dp"
                     android:layout_height="match_parent"
-                    android:maxLines="1"
-                    android:text="@{displayAlphabetViewModel.getTextViewMainData}"
-                    android:textSize="@dimen/main_language_text"
-                    app:minTextSize="@dimen/main_language_min_text" />
+                    android:layout_marginRight="@dimen/activity_half_margin"
+                    android:layout_weight="0.5">
+
+                    <TextView
+                        android:id="@+id/lang_one"
+                        style="@style/CardStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/alphabet_card_border"
+                        android:text="@{displayAlphabetViewModel.getTextViewOneData}"
+                        android:textSize="@dimen/secondary_language_text" />
+                </android.support.v7.widget.CardView>
+
+                <android.support.v7.widget.CardView
+                    android:layout_width="@dimen/zero_dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="@dimen/activity_half_margin"
+                    android:layout_weight="0.5">
+
+                    <TextView
+                        android:id="@+id/lang_two"
+                        style="@style/CardStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/alphabet_card_border"
+                        android:text="@{displayAlphabetViewModel.getTextViewTwoData}"
+                        android:textSize="@dimen/secondary_language_text" />
+                </android.support.v7.widget.CardView>
             </LinearLayout>
-        </android.support.v7.widget.CardView>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/zero_dp"
-            android:layout_weight="0.3"
-            android:orientation="horizontal"
-            android:weightSum="1">
-
-            <android.support.v7.widget.CardView
-                android:layout_width="@dimen/zero_dp"
-                android:layout_height="match_parent"
-                android:layout_marginRight="@dimen/activity_half_margin"
-                android:layout_weight="0.5">
-
-                <TextView
-                    android:id="@+id/lang_one"
-                    style="@style/CardStyle"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:background="@drawable/alphabet_card_border"
-                    android:text="@{displayAlphabetViewModel.getTextViewOneData}"
-                    android:textSize="@dimen/secondary_language_text" />
-            </android.support.v7.widget.CardView>
-
-            <android.support.v7.widget.CardView
-                android:layout_width="@dimen/zero_dp"
-                android:layout_height="match_parent"
-                android:layout_marginLeft="@dimen/activity_half_margin"
-                android:layout_weight="0.5">
-
-                <TextView
-                    android:id="@+id/lang_two"
-                    style="@style/CardStyle"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:background="@drawable/alphabet_card_border"
-                    android:text="@{displayAlphabetViewModel.getTextViewTwoData}"
-                    android:textSize="@dimen/secondary_language_text" />
-            </android.support.v7.widget.CardView>
         </LinearLayout>
     </LinearLayout>
 </layout>

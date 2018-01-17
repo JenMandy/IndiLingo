@@ -1,14 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <GridView
-        android:id="@+id/barakhadi_list"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_margin="@dimen/activity_vertical_margin"
-        android:gravity="center"
-        android:horizontalSpacing="@dimen/activity_half_margin"
-        android:numColumns="5"
-        android:stretchMode="columnWidth"
-        android:verticalSpacing="@dimen/activity_half_margin" />
+        android:orientation="vertical">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="?attr/colorPrimary"
+            android:elevation="@dimen/elevation"
+            android:minHeight="?attr/actionBarSize" />
+
+        <GridView
+            android:id="@+id/barakhadi_list"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="@dimen/activity_vertical_margin"
+            android:gravity="center"
+            android:horizontalSpacing="@dimen/activity_half_margin"
+            android:numColumns="5"
+            android:stretchMode="columnWidth"
+            android:verticalSpacing="@dimen/activity_half_margin" />
+    </LinearLayout>
 </layout>

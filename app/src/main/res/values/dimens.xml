@@ -7,7 +7,7 @@
     <dimen name="view_small_padding">5dp</dimen>
     <dimen name="fab_margin">16dp</dimen>
     <dimen name="zero_dp">0dp</dimen>
-    <dimen name="elevation">5dp</dimen>
+    <dimen name="elevation">4dp</dimen>
 
     <!--Display Alphabets dimens-->
     <dimen name="main_language_text">145sp</dimen>
