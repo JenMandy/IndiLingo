@@ -2,7 +2,7 @@
 <resources>
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
-    <color name="colorAccent">#FF4081</color>
+    <color name="colorAccent">@color/red</color>
     <color name="black">#000000</color>
     <color name="white">#FFFFFF</color>
     <!--<color name="red_36">#36FF0000</color>-->
@@ -13,6 +13,8 @@
     <color name="blue">#0000FF</color>
     <!--<color name="forest_green_36">#36228B22</color>-->
     <!--<color name="forest_green_E0">#E0228B22</color>-->
+    <color name="green_36">#3600FF00</color>
+    <color name="green_E0">#E000FF00</color>
     <color name="green">#00FF00</color>
     <!--<color name="yellow_36">#36FF7D00</color>-->
     <!--<color name="yellow_E0">#E0FF7D00</color>-->

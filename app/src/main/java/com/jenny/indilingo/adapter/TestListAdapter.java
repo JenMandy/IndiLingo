@@ -12,7 +12,6 @@ import android.widget.BaseAdapter;
 import com.jenny.indilingo.R;
 import com.jenny.indilingo.activity.TestAlphabetsActivity;
 import com.jenny.indilingo.databinding.ItemSelectTopicBinding;
-import com.jenny.indilingo.databinding.ItemTestListBinding;
 import com.jenny.indilingo.viewmodel.TestListViewModel;
 
 /**
@@ -41,6 +40,20 @@ public class TestListAdapter extends BaseAdapter {
             holder.mSelectTopicBinding.topicName.setTag(position);
 
             if (position <= (mHighestLevel + 1)) {
+                if (position < mHighestLevel + 1) {
+                    holder.mSelectTopicBinding.topicName.setButtonBackground(
+                            mContext.getResources().getColor(R.color.green_E0),
+                            mContext.getResources().getColor(R.color.green_36),
+                            mContext.getResources().getColor(R.color.disable)
+                    );
+                } else {
+                    holder.mSelectTopicBinding.topicName.setButtonBackground(
+                            mContext.getResources().getColor(R.color.blue_E0),
+                            mContext.getResources().getColor(R.color.blue_36),
+                            mContext.getResources().getColor(R.color.disable)
+                    );
+                }
+
                 holder.mSelectTopicBinding.topicName.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
